@@ -2,8 +2,9 @@ var util = {
 	options: {
 		ACTIVE_COLOR: "#007aff",
 		NORMAL_COLOR: "#000",
-		subpages: ["html/refresh-chat.html", "html/tong_xun_lu.html"]
+		subpages: ["", "html/gongZuo.html", "", "html/tongXunLu.html"]//tabs列表
 	},
+	restAddress: 'http://192.168.0.112:8884/WJZDNEW/invoke',//服务器地址
 	/**
 	 *  简单封装了绘制原生view控件的方法
 	 *  绘制内容支持font（文本，字体图标）,图片img , 矩形区域rect
@@ -103,5 +104,148 @@ var util = {
 			currTag = nviewObj.tags[currIndex]; // 获取当前需重绘的tag
 
 		nviewEvent.drawText(currTag.text, currTag.position, util.changeColor(currTag.textStyles, color), currTag.id);
-	}
+	},
+	/**
+     * 通过ID获取元素
+     * id_element 为id名
+     * @param {Object} id_data
+     */
+    id: function(id_element) {
+      return document.getElementById(id_element);
+    },
+    /**
+     * 通过Class获取元素
+     * classElement 为class名
+     * @param {Object} parentElement 父级元素
+     * @param {Object} classElement
+     */
+    className: function(parentElement, classElement) {
+      if(classElement == undefined) {
+        return document.getElementsByClassName(parentElement);
+      }
+      return parentElement.getElementsByClassName(classElement);
+    },
+    /**
+     * 通过标签获取元素
+     * tagElement 为元素名
+     * @param {Object} parentElement 父级元素
+     * @param {Object} tagElement
+     */
+    tagName: function(parentElement, tagElement) {
+      if(tagElement == undefined) {
+        return document.getElementsByTagName(parentElement);
+      }
+
+      return parentElement.getElementsByTagName(tagElement);
+    },
+    /**
+     * 获得当前时间
+     */
+    getCurrentTime: function() {
+      var oDate = new Date();
+      var aDate = [];
+      aDate.push(oDate.getFullYear());
+      aDate.push(oDate.getMonth() + 1);
+      aDate.push(oDate.getDate());
+      aDate.push(oDate.getHours());
+      aDate.push(oDate.getMinutes());
+      aDate.push(oDate.getSeconds());
+      aDate.push(oDate.getDay());
+      aDate.push(oDate.getTime());
+      return aDate;
+    },
+    /**
+     * Ajax - get 请求
+     * @param {Object} url 请求Url
+     * @param {Object} data   参数-Json格式
+     * @param {Object} succFn	  回调
+     * 测试地址: http://test.dongyixueyuan.com/index.php/link_app/get?state=index
+     */
+    get: function(jsonData) {
+      util.ajax({
+        url: jsonData.url,
+        data: jsonData.data,
+        succFn: jsonData.succFn,
+        type: 'get'
+      });
+    },
+    /**
+     * Ajax - post 请求
+     * @param {Object} url 请求Url
+     * @param {Object} data   参数-Json格式
+     * @param {Object} succFn	  回调
+     * 测试地址: http://test.dongyixueyuan.com/index.php/link_app/post?state=index
+     */
+    post: function(jsonData) {
+      util.ajax({
+        url: jsonData.url,
+        data: jsonData.data,
+        succFn: jsonData.succFn,
+        type: 'post'
+      });
+    },
+    /**
+     * Ajax
+     * @param {Object} json
+     */
+    ajax: function(json) {
+      var timer = null;
+      var oAjax = null;
+      json = json || {};
+      if(!json.url) {
+        util.prompt('请求url不存在');
+        return;
+      }
+      json.type = json.type || 'get';
+      json.time = json.time || 10;
+      json.data = json.data || {};
+      if(window.XMLHttpRequest) {
+        oAjax = new XMLHttpRequest();
+      } else {
+        oAjax = new ActiveXObject('Microsoft.XMLHTTP');
+      }
+      switch(json.type.toLowerCase()) {
+        case 'get':
+          oAjax.open('GET', json.url + '?' + json2url(json.data), true);
+          console.log(json.url + '?' + json2url(json.data));
+          oAjax.send();
+          break;
+        case 'post':
+          oAjax.open('POST', json.url, true);
+          oAjax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+          oAjax.send(json2url(json.data));
+          break;
+      }
+      oAjax.onreadystatechange = function() {
+        if(oAjax.readyState == 4) {
+          if(oAjax.status >= 200 && oAjax.status < 300 || oAjax.status == 304) {
+            clearTimeout(timer);
+            json.succFn && json.succFn(oAjax.responseText);
+          } else {
+            clearTimeout(timer);
+            json.errFn && json.errFn(oAjax.status);
+          }
+        }
+      }
+      timer = setTimeout(function() {
+        util.prompt('网络超时');
+        oAjax.onreadystatechange = null;
+      }, json.time * 1000);
+
+      function json2url(json) {
+        json.t = Math.random();
+        var arr = [];
+        for(var name in json) {
+          arr.push(name + '=' + json[name]);
+        }
+        return arr.join('&');
+      }
+    },
+    /**
+     * 自动消失提示框
+     * @param {Object} m 提示信息
+     */
+    prompt: function(m) {
+      mui.toast(m);
+    },
 };
