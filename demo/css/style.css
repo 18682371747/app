@@ -134,9 +134,76 @@
   font-size: 13px;
 }
 
-.login-form .mui-input-row label{
-	width:25%;
+.login-form .mui-input-row label {
+  width: 25%;
 }
-.login-form .mui-input-row label~input{
-	width:75%;
+
+.login-form .mui-input-row label~input {
+  width: 75%;
 }
+
+
+/*-----------首页start------------*/
+
+.mui-content {
+  background-color: #fff
+}
+
+.page_home .mui-slider-group img {
+  height: 170px
+}
+
+.mui-card .mui-card-header {
+  padding: 0 15px;
+  min-height: 36px;
+  font-size: 14px;
+}
+
+.mui-card a.mui-navigate-right {
+  padding: 5px 15px;
+}
+
+
+/*-----------首页end------------*/
+
+
+/*-----------通讯录start------------*/
+
+.page_tongxunlu .mui-table-view {
+  top: 45px;
+  position: absolute;
+}
+
+.oa-contact-cell.mui-table .mui-table-cell {
+  padding: 11px 0;
+  vertical-align: middle;
+}
+
+.oa-contact-cell {
+  position: relative;
+  margin: -11px 0;
+}
+
+.oa-contact-avatar {
+  width: 75px;
+}
+
+.oa-contact-avatar img {
+  border-radius: 50%;
+}
+
+.oa-contact-content {
+  width: 100%;
+}
+
+.oa-contact-name {
+  margin-right: 20px;
+}
+
+.oa-contact-name,
+oa-contact-position {
+  float: left;
+}
+
+
+/*-----------通讯录end------------*/
