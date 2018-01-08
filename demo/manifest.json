@@ -360,7 +360,8 @@
 					"html/new-webview.html",
 					"listview.html",
 					"html/tong_xun_lu.html",
-					"html/tongXunLu.html"
+					"html/tongXunLu.html",
+					"html/daiban_list.html"
 				],
 				"priority": 0
 			},

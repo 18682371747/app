@@ -106,6 +106,24 @@
     });
     // 中间凸起图标绘制及监听点击完毕
 
+    var goto_page = util.className('goto_page');
+		//代办任务点击事件
+    goto_page[0].addEventListener('click', function(e) {
+				plus.webview.open('html/daiban_list.html', 'page_daiban_list', {}, 'slide-in-right', 200);
+    })
+    //项目工程审批点击事件
+    goto_page[1].addEventListener('click', function(e) {
+
+        util.prompt('点击')
+
+    })
+    //通知公告
+    goto_page[2].addEventListener('click', function(e) {
+
+        util.prompt('点击')
+
+    })
+
     // 创建子webview窗口 并初始化
     var aniShow = {};
     util.initSubpage(aniShow);
@@ -143,81 +161,81 @@
       }
 
       if(currIndex === 2) {
-       //打开新窗口
+        //打开新窗口
         plus.webview.open('html/new-webview.html', 'new', {}, 'slide-in-right', 200);
       } else {
-      	 //底部选项卡切换
+        //底部选项卡切换
         util.toggleNview(currIndex);
         // 子页面切换
         util.changeSubpage(targetPage, activePage, aniShow);
         //更新当前活跃的页面
         activePage = targetPage;
-        
+
       }
     });
-    
+
     var modelPage = {
-    /**
-     * 初始化页面
-     */
-    initPage: function() {
-      var me = modelPage,
-        data = [{
-          img: 'images/4.jpg'
-        }, {
-          img: 'images/1.jpg'
-        }, {
-          img: 'images/2.jpg'
-        }, {
-          img: 'images/3.jpg'
-        }, {
-          img: 'images/4.jpg'
-        }]
-      me.initGallery(data);
-      me.initScroll();
-    },
-    /**
-     * 初始化图片轮询组件
-     * @param {Object} data
-     */
-    initGallery: function(data) {
-      var slider_img_html = '',
-        slider_img_list = util.id('slider_img_list'),
-        tmpl, dataInfo;
+      /**
+       * 初始化页面
+       */
+      initPage: function() {
+        var me = modelPage,
+          data = [{
+            img: 'images/4.jpg'
+          }, {
+            img: 'images/1.jpg'
+          }, {
+            img: 'images/2.jpg'
+          }, {
+            img: 'images/3.jpg'
+          }, {
+            img: 'images/4.jpg'
+          }]
+        me.initGallery(data);
+        me.initScroll();
+      },
+      /**
+       * 初始化图片轮询组件
+       * @param {Object} data
+       */
+      initGallery: function(data) {
+        var slider_img_html = '',
+          slider_img_list = util.id('slider_img_list'),
+          tmpl, dataInfo;
 
-      for(var i = 0; i < data.length; i++) {
-        tmpl = '';
-        dataInfo = data[i];
-        if(i == 0) {
-          slider_img_html += '<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="' + dataInfo.img + '"></a></div>'
+        for(var i = 0; i < data.length; i++) {
+          tmpl = '';
+          dataInfo = data[i];
+          if(i == 0) {
+            slider_img_html += '<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="' + dataInfo.img + '"></a></div>'
+          }
+          tmpl = '<div class="mui-slider-item"><a href="#"><img src="' + dataInfo.img + '"></a></div>';
+          slider_img_html += tmpl;
+
+          if(i == dataInfo.length - 1) {
+            slider_img_html += '<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="' + dataInfo.img + '"></a></div>'
+          }
+
         }
-        tmpl = '<div class="mui-slider-item"><a href="#"><img src="' + dataInfo.img + '"></a></div>';
-        slider_img_html += tmpl;
 
-        if(i == dataInfo.length - 1) {
-          slider_img_html += '<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="' + dataInfo.img + '"></a></div>'
-        }
+        slider_img_list.innerHTML = slider_img_html;
 
+        mui(".mui-slider").slider({
+          interval: 3000
+        });
+      },
+      /**
+       * 初始化页面滚动条
+       */
+      initScroll: function() {
+        mui('.mui-scroll-wrapper').scroll({
+          deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+        });
       }
 
-      slider_img_list.innerHTML = slider_img_html;
-
-      mui(".mui-slider").slider({
-        interval: 3000
-      });
-    },
-    /**
-     * 初始化页面滚动条
-     */
-    initScroll: function() {
-      mui('.mui-scroll-wrapper').scroll({
-        deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
-      });
     }
+    //页面初始化
+    modelPage.initPage();
 
-  }
-  //页面初始化
-  modelPage.initPage();
-  
   });
 })();

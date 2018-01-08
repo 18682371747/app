@@ -5,6 +5,7 @@ var page = {
       data: param,
       async: false,
       succFn: function(data) {
+      	console.log(data)
         data = JSON.parse(data);
         page.initHtml(data.data_array);
 

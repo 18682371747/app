@@ -4,7 +4,7 @@ var util = {
 		NORMAL_COLOR: "#000",
 		subpages: ["", "html/gongZuo.html", "", "html/tongXunLu.html"]//tabs列表
 	},
-	restAddress: 'http://192.168.0.112:8884/WJZDNEW/invoke',//服务器地址
+	restAddress: 'http://183.215.12.97:8884/rjpmp/invoke',//服务器地址
 	/**
 	 *  简单封装了绘制原生view控件的方法
 	 *  绘制内容支持font（文本，字体图标）,图片img , 矩形区域rect
