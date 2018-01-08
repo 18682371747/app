@@ -5,18 +5,14 @@ var page = {
       data: param,
       async: false,
       succFn: function(data) {
-        
-        debugger
         data = JSON.parse(data);
-
         page.initHtml(data.data_array);
 
       }
     })
   },
-  initHtml : function(data) {
-
-
+  initHtml: function(data) {
+		console.log(data.length)
     var tmpl, info,
       ul = util.id('tongxunlu'),
       tmpl_Ary = '';
@@ -27,16 +23,17 @@ var page = {
       tmpl_Ary += tmpl;
     }
     ul.innerHTML = tmpl_Ary;
-		page.initEvent()
+    page.initEvent()
   },
   initEvent: function() {
-
-    util.className('mui-table-view-cell')[0].addEventListener('tap', function() {
-
-      page.getData({})
-
-    });
+    var me,
+    	cell = util.className('mui-table-view-cell');
+    for(var a = 0; a < cell.length; a++) {
+    	me = cell[a];
+      me.addEventListener('tap', function() {
+        console.log(me)
+      });
+    }
   }
 }
 page.getData({});
-page.initEvent()
