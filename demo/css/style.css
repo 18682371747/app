@@ -213,6 +213,31 @@ oa-contact-position {
   float: left;
 }
 
+.p_inline_block {
+  display: inline-block;
+}
+.d_none {
+	display:none;
+}
+
+.p_left {
+  width: 49%;
+  text-align: left;
+}
+
+.p_right {
+  width: 49%;
+  text-align: right;
+}
+
+.ul-li-title {
+  color: #333;
+}
+
+span.card-title-right {
+  font-size: 24px;
+}
+
 
 /*-----------通讯录end------------*/
 
@@ -237,11 +262,13 @@ oa-contact-position {
   margin-top: 2px;
   background-color: #fff;
   border-radius: 5px;
- 
 }
 
-.mui-btn-warning.mui-active:enabled,.mui-btn-warning:enabled:active,.mui-btn-yellow.mui-active:enabled,.mui-btn-yellow:enabled:active {
-    color: #fff;
-    background-color: #ec971f;
-    border: 1px solid #ec971f
+.mui-btn-warning.mui-active:enabled,
+.mui-btn-warning:enabled:active,
+.mui-btn-yellow.mui-active:enabled,
+.mui-btn-yellow:enabled:active {
+  color: #fff;
+  background-color: #ec971f;
+  border: 1px solid #ec971f
 }
