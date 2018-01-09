@@ -429,6 +429,13 @@
 					"detail.html"
 				],
 				"priority": 0
+			},
+			"html/daiban_list.html": {
+				"resources": [],
+				"refer": [
+					"html/daiban_list.html"
+				],
+				"priority": 0
 			}
 		},
 		"idle": {
