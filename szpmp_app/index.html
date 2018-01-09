@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>首页</title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/iconfont.css" rel="stylesheet" />
+
+  </head>
+
+  <body>
+    <div class="mui-content">
+      <header class="mui-bar mui-bar-nav">
+        <h1 class="mui-title">首页</h1>
+      </header>
+      <div class="mui-content mui-scroll-wrapper page_home" id="page_home">
+        <div class="mui-scroll">
+          <!--图片轮询start-->
+          <div id="slider" class="mui-slider">
+            <div id="slider_img_list" class="mui-slider-group mui-slider-loop" style="transform: translate3d(-320px, 0px, 0px) translateZ(0px); transition-duration: 0ms; transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);">
+
+            </div>
+            <div class="mui-slider-indicator">
+              <div class="mui-indicator mui-active"></div>
+              <div class="mui-indicator"></div>
+              <div class="mui-indicator"></div>
+              <div class="mui-indicator"></div>
+              <div class="mui-indicator"></div>
+            </div>
+          </div>
+          <!--图片轮询end-->
+
+          <!--代办任务start-->
+          <div class="mui-card">
+
+            <div class="mui-card-header">
+              <span class="card-title-left c-1">代办任务<span class="mui-badge mui-badge-danger">45</span> </span>
+              <span class="card-title-right icon-list-ordered c-4 goto_page"></span>
+            </div>
+
+            <div class="mui-card-content">
+              <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                  <a class="mui-navigate-right">Item 1</a>
+                </li>
+                <li class="mui-table-view-cell">
+                  <a class="mui-navigate-right">Item 2</a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          <!--代办任务end-->
+
+          <!--项目工程审批start-->
+          <div class="mui-card">
+
+            <div class="mui-card-header">
+              <span class="card-title-left c-1">项目工程审批<span class="mui-badge mui-badge-danger">45</span></span>
+              <span class="card-title-right icon-list-ordered c-4 goto_page"></span>
+            </div>
+
+            <div class="mui-card-content">
+              <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                  <a class="mui-navigate-right">Item 1</a>
+                </li>
+                <li class="mui-table-view-cell">
+                  <a class="mui-navigate-right">Item 2</a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          <!--项目工程审批end-->
+
+          <!--通知公告start-->
+          <div class="mui-card">
+
+            <div class="mui-card-header">
+              <span class="card-title-left c-1">通知公告<span class="mui-badge mui-badge-danger">45</span></span>
+              <span class="card-title-right icon-list-ordered c-4 goto_page" id="page_tongzhi"></span>
+            </div>
+
+            <div class="mui-card-content">
+              <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                  <a class="mui-navigate-right">Item 1</a>
+                </li>
+                <li class="mui-table-view-cell">
+                  <a class="mui-navigate-right">Item 2</a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          <!--通知公告end-->
+
+        </div>
+      </div>
+    </div>
+    <script src="js/util.js"></script>
+    <script src="js/index.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,13 @@
+{
+	"index.html": {
+		"resources": [
+			"html/gongZuo.html"
+		],
+		"refer": [
+			"html/tongXunLu.html",
+			"html/gongZuo.html",
+			"html/new-webview.html",
+			"html/daiban_list.html"
+		]
+	}
+}

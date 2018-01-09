@@ -1,0 +1,274 @@
+/*头部导航*/
+
+.mui-bar-nav {
+  background: #1DACF9;
+}
+
+.mui-bar-nav a,
+.mui-bar-nav h1 {
+  color: #fff !important;
+}
+
+
+/*公用列表文字大小*/
+
+.list-text .mui-input-row label,
+.list-text .mui-input-row input {
+  font-size: 14px;
+}
+
+.back_title {
+  font-size: 16px;
+}
+
+
+/*公用按钮*/
+
+.btn-block {
+  background: #1DACF9;
+  color: #fff;
+  border: 0px;
+  width: 90%;
+  left: 5%;
+  right: 5%;
+  height: 40px;
+  margin: 15px 0px;
+}
+
+.new-btn {
+  background: #C5E5F8;
+  color: #3695C7;
+  border: 0px;
+  padding: 2px 10px;
+  font-size: 12px;
+}
+
+
+/*公用线*/
+
+.border-bottom {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.border-right {
+  border-right: 1px solid #f0f0f0;
+}
+
+
+/*公用颜色*/
+
+.orange {
+  color: #FF7200;
+}
+
+.blue {
+  color: #1DACF9;
+}
+
+.gray {
+  color: #999;
+}
+
+.c-1 {
+  color: #029CEF !important;
+}
+
+.c-2 {
+  color: #85C50C !important;
+}
+
+.c-3 {
+  color: #FF5B4C !important;
+}
+
+.c-4 {
+  color: #FFB026 !important;
+}
+
+.bgc-1 {
+  background: #029CEF !important;
+}
+
+.bgc-2 {
+  background: #85C50C !important;
+}
+
+.bgc-3 {
+  background: #FF5B4C !important;
+}
+
+.bgc-4 {
+  background: #FFB026 !important;
+}
+
+
+/*公用内边距*/
+
+.public-padding {
+  padding: 10px 15px;
+}
+
+
+/*公用列表文字大小*/
+
+.public-list-txt li {
+  font-size: 14px;
+}
+
+
+/*-----------------------*/
+
+
+/*登录*/
+
+.login-form {
+  margin-top: 20px;
+}
+
+.login-bottom {
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.login-bottom button {
+  padding: 0px;
+  color: #666;
+  font-size: 13px;
+}
+
+.login-form .mui-input-row label {
+  width: 25%;
+}
+
+.login-form .mui-input-row label~input {
+  width: 75%;
+}
+
+
+/*-----------首页start------------*/
+
+.mui-content {
+  background-color: #fff
+}
+
+.page_home .mui-slider-group img {
+  height: 170px
+}
+
+.mui-card .mui-card-header {
+  padding: 0 15px;
+  min-height: 36px;
+  font-size: 14px;
+}
+
+.mui-card a.mui-navigate-right {
+  padding: 5px 15px;
+}
+
+.mui-card {
+  border-radius: 10px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, .3);
+}
+
+
+/*-----------首页end------------*/
+
+
+/*-----------通讯录start------------*/
+
+.page_tongxunlu .mui-table-view {
+  top: 45px;
+  position: absolute;
+}
+
+.oa-contact-cell.mui-table .mui-table-cell {
+  padding: 11px 0;
+  vertical-align: middle;
+}
+
+.oa-contact-cell {
+  position: relative;
+  margin: -11px 0;
+}
+
+.oa-contact-avatar {
+  width: 75px;
+}
+
+.oa-contact-avatar img {
+  border-radius: 50%;
+}
+
+.oa-contact-content {
+  width: 100%;
+}
+
+.oa-contact-name {
+  margin-right: 20px;
+}
+
+.oa-contact-name,
+oa-contact-position {
+  float: left;
+}
+
+.p_inline_block {
+  display: inline-block;
+}
+.d_none {
+	display:none;
+}
+
+.p_left {
+  width: 49%;
+  text-align: left;
+}
+
+.p_right {
+  width: 49%;
+  text-align: right;
+}
+
+.ul-li-title {
+  color: #333;
+}
+
+span.card-title-right {
+  font-size: 24px;
+}
+
+
+/*-----------通讯录end------------*/
+
+.reset_mui_search {
+  width: calc(100% - 142px);
+  display: inline-block;
+  margin-top: 2px;
+  margin-left: 20px;
+}
+
+.reset_mui_search .mui-placeholder {
+  text-align: left;
+  padding-left: 5px;
+}
+
+.reset_mui_search input[type=search] {
+  background-color: #fff;
+}
+
+.new_mui_page .mui-bar .mui-btn-warning {
+  line-height: 14px;
+  margin-top: 2px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.mui-btn-warning.mui-active:enabled,
+.mui-btn-warning:enabled:active,
+.mui-btn-yellow.mui-active:enabled,
+.mui-btn-yellow:enabled:active {
+  color: #fff;
+  background-color: #ec971f;
+  border: 1px solid #ec971f
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>代办任务列表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <script src="../js/mui.min.js"></script>
+    <script src="../js/util.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
+    <link href="../css/iconfont.css" rel="stylesheet" />
+
+  </head>
+
+  <body>
+
+    <div class="new_mui_page page_daiban_list" id="page_daiban_list">
+      <header class="mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"><span class="back_title">返回</span></a>
+
+          <div class="mui-input-row mui-search reset_mui_search">
+            <input type="search" class="mui-input-clear" placeholder="请输入" id="search_ipt" />
+          </div>
+          <button type="button" class="mui-btn mui-btn-warning mui-btn-outlined " id="search_btn">搜索</button>
+
+      </header>
+      <div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+        <div class="mui-scroll">
+          <ul class="mui-table-view mui-table-view-chevron" id="ul_daiban_list">
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="js/daiban_list.js"></script>
+
+</html>
