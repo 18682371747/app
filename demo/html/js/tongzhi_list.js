@@ -47,3 +47,8 @@ function pullupRefresh() {
     }
   }, 1000);
 }
+
+
+var page = {
+	id:'tongzhi_list'
+}

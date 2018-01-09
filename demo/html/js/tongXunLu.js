@@ -1,4 +1,5 @@
 var page = {
+	id:'tongxunlu',
   getData: function(param) {
     util.get({
       url: util.restAddress + '?service=SEARCH_CONTACT_LIST&userid=SYSTEM&password=1&imei=1&sim=18932482046&version=1.0',
@@ -13,7 +14,7 @@ var page = {
     })
   },
   initHtml: function(data) {
-		console.log(data.length)
+
     var tmpl, info,
       ul = util.id('tongxunlu'),
       tmpl_Ary = '';
@@ -24,11 +25,13 @@ var page = {
       tmpl_Ary += tmpl;
     }
     ul.innerHTML = tmpl_Ary;
+
     page.initEvent()
   },
   initEvent: function() {
     var me,
     	cell = util.className('mui-table-view-cell');
+    	
     for(var a = 0; a < cell.length; a++) {
     	me = cell[a];
       me.addEventListener('tap', function() {
